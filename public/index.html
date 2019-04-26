@@ -1,0 +1,1099 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Sparsh Architecture</title>
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,500" rel="stylesheet">
+
+	<link rel="stylesheet" href="vendor/themify-icons/themify-icons.css">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="vendor/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<head><style>
+/* Kettle container */
+#kettle {
+  background: url("https://f.cl.ly/items/19143O0V3t1M18212f3N/kettle-icon.png") no-repeat center top;
+  width: 100%;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 180px;
+  padding-bottom: 50px;
+}
+
+/* Smoke container */
+#smoke {
+  position: absolute;
+  z-index: 3;
+  width: 0px;
+  height: 110px;
+  left: 50%;
+  top: 9px;
+  margin-left: 52px;
+}
+
+/* smoke balls */
+.cssanimations #smoke span {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -20px;
+  height: 0px;
+  width: 0px;
+  border: 35px solid #515151;
+  border-radius: 35px;
+  left: -14px;
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+/* Smoke animation */
+@-webkit-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(-20px, -130px);
+    -ms-transform: scale(0.75) translate(-20px, -130px);
+    -webkit-transform: scale(0.75) translate(-20px, -130px);
+    transform: scale(0.75) translate(-20px, -130px);
+  }
+}
+@-moz-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(-20px, -130px);
+    -ms-transform: scale(0.75) translate(-20px, -130px);
+    -webkit-transform: scale(0.75) translate(-20px, -130px);
+    transform: scale(0.75) translate(-20px, -130px);
+  }
+}
+@-o-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(-20px, -130px);
+    -ms-transform: scale(0.75) translate(-20px, -130px);
+    -webkit-transform: scale(0.75) translate(-20px, -130px);
+    transform: scale(0.75) translate(-20px, -130px);
+  }
+}
+@keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(-20px, -130px);
+    -ms-transform: scale(0.75) translate(-20px, -130px);
+    -webkit-transform: scale(0.75) translate(-20px, -130px);
+    transform: scale(0.75) translate(-20px, -130px);
+  }
+}
+@-webkit-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(20px, -130px);
+    -ms-transform: scale(0.75) translate(20px, -130px);
+    -webkit-transform: scale(0.75) translate(20px, -130px);
+    transform: scale(0.75) translate(20px, -130px);
+  }
+}
+@-moz-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(20px, -130px);
+    -ms-transform: scale(0.75) translate(20px, -130px);
+    -webkit-transform: scale(0.75) translate(20px, -130px);
+    transform: scale(0.75) translate(20px, -130px);
+  }
+}
+@-o-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(20px, -130px);
+    -ms-transform: scale(0.75) translate(20px, -130px);
+    -webkit-transform: scale(0.75) translate(20px, -130px);
+    transform: scale(0.75) translate(20px, -130px);
+  }
+}
+@keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 0.5;
+    -moz-transform: scale(0.1) translate(0, -5px);
+    -ms-transform: scale(0.1) translate(0, -5px);
+    -webkit-transform: scale(0.1) translate(0, -5px);
+    transform: scale(0.1) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.75) translate(20px, -130px);
+    -ms-transform: scale(0.75) translate(20px, -130px);
+    -webkit-transform: scale(0.75) translate(20px, -130px);
+    transform: scale(0.75) translate(20px, -130px);
+  }
+}
+#smoke .s0 {
+  -webkit-animation: smokeL 10s 0s infinite;
+  -moz-animation: smokeL 10s 0s infinite;
+  -o-animation: smokeL 10s 0s infinite;
+  animation: smokeL 10s 0s infinite;
+}
+
+#smoke .s1 {
+  -webkit-animation: smokeR 10s 1s infinite;
+  -moz-animation: smokeR 10s 1s infinite;
+  -o-animation: smokeR 10s 1s infinite;
+  animation: smokeR 10s 1s infinite;
+}
+
+#smoke .s2 {
+  -webkit-animation: smokeL 10s 2s infinite;
+  -moz-animation: smokeL 10s 2s infinite;
+  -o-animation: smokeL 10s 2s infinite;
+  animation: smokeL 10s 2s infinite;
+}
+
+#smoke .s3 {
+  -webkit-animation: smokeR 10s 3s infinite;
+  -moz-animation: smokeR 10s 3s infinite;
+  -o-animation: smokeR 10s 3s infinite;
+  animation: smokeR 10s 3s infinite;
+}
+
+#smoke .s4 {
+  -webkit-animation: smokeL 10s 4s infinite;
+  -moz-animation: smokeL 10s 4s infinite;
+  -o-animation: smokeL 10s 4s infinite;
+  animation: smokeL 10s 4s infinite;
+}
+
+#smoke .s5 {
+  -webkit-animation: smokeR 10s 5s infinite;
+  -moz-animation: smokeR 10s 5s infinite;
+  -o-animation: smokeR 10s 5s infinite;
+  animation: smokeR 10s 5s infinite;
+}
+
+#smoke .s6 {
+  -webkit-animation: smokeL 10s 6s infinite;
+  -moz-animation: smokeL 10s 6s infinite;
+  -o-animation: smokeL 10s 6s infinite;
+  animation: smokeL 10s 6s infinite;
+}
+
+#smoke .s7 {
+  -webkit-animation: smokeR 10s 7s infinite;
+  -moz-animation: smokeR 10s 7s infinite;
+  -o-animation: smokeR 10s 7s infinite;
+  animation: smokeR 10s 7s infinite;
+}
+
+#smoke .s8 {
+  -webkit-animation: smokeL 10s 8s infinite;
+  -moz-animation: smokeL 10s 8s infinite;
+  -o-animation: smokeL 10s 8s infinite;
+  animation: smokeL 10s 8s infinite;
+}
+
+#smoke .s9 {
+  -webkit-animation: smokeR 10s 9s infinite;
+  -moz-animation: smokeR 10s 9s infinite;
+  -o-animation: smokeR 10s 9s infinite;
+  animation: smokeR 10s 9s infinite;
+}
+
+</style>
+<script>
+var scrollW = document.getElementById("wrap-scroll");
+var scrollUl = document.getElementById("ul-scroll");
+var itemsScrolled,
+    itemsMax,
+    cloned = false;
+
+var listOpts = {
+  itemCount: null,
+  itemHeight: null,
+  items: [],
+};
+
+function scrollWrap () {
+  
+  itemsScrolled = Math.ceil( (this.scrollTop + listOpts.itemHeight / 2 ) / listOpts.itemHeight);
+ 
+  if (this.scrollTop < 1) {
+    itemsScrolled = 0;
+  }
+     
+  listOpts.items.forEach(function (ele) {
+    ele.classList.remove("active");
+  })
+  
+  if (itemsScrolled < listOpts.items.length) {
+    listOpts.items[itemsScrolled].classList.add("active");
+  }
+  
+  if (itemsScrolled > listOpts.items.length - 3) {
+    
+    var node;
+    for ( _x = 0; _x <= itemsMax - 1; _x++ ) {
+      
+      node = listOpts.items[_x];
+      
+      if ( !cloned ) {
+        node = listOpts.items[_x].cloneNode(true);
+      }
+            
+      scrollUl.appendChild(node);
+    }
+    
+    initItems(cloned);
+    cloned = true; 
+    itemsScrolled = 0;
+    
+  }
+}
+
+function initItems (scrollSmooth) {
+  
+  listOpts.items = [].slice.call(scrollUl.querySelectorAll("li"));
+  listOpts.itemHeight = listOpts.items[0].clientHeight;
+  listOpts.itemCount = listOpts.items.length;
+  
+  if (!itemsMax) {
+    itemsMax = listOpts.itemCount;
+  }
+  
+  if (scrollSmooth) {
+    var seamLessScrollPoint = ((itemsMax - 3) * listOpts.itemHeight);
+    scrollW.scrollTop = seamLessScrollPoint;
+  }      
+  
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  initItems();
+  scrollW.onscroll = scrollWrap;
+});
+
+</script>
+
+<script>
+  var glob_start_data_json = '{"wheel":{"tree":[{"bid":"1","bname":"Aroma","bcolor":"8cb125","bord":0,"bparent":0,"children":[{"bid":36,"bname":"Caustic","bord":"1","bcolor":"2aa4d1","bparent":"-","tree":1,"empty":1,"children":[{"bid":96,"bname":"delMineral","bord":"0","bcolor":"76c9e7","bparent":"36","empty":1,"children":[{"bid":98,"bname":"delSalt","bord":"1","bcolor":"6bdbc5","bparent":"96","empty":1}]},{"bid":97,"bname":"Chemical","bord":"1","bcolor":"6cd4f0","bparent":"36","empty":1,"children":[{"bid":101,"bname":"Ammonia","bord":"1","bcolor":"5cc494","bparent":"97","lastbranch":true},{"bid":100,"bname":"Bubblegum","bord":"2","bcolor":"55f2d7","bparent":"97","empty":1},{"bid":842,"bname":"Diesel","bord":"3","bcolor":"58ab9e","bparent":"97","lastbranch":true},{"bid":102,"bname":"Skunk","bord":"4","bcolor":"9aa874","bparent":"97","lastbranch":true}]}]},{"bid":33,"bname":"Earth","bord":"2","bcolor":"a77747","bparent":"-","tree":1,"empty":1,"children":[{"bid":57,"bname":"delNutty","bord":"1","bcolor":"d4b36e","bparent":"33","empty":1,"children":[{"bid":70,"bname":"delChestnut","bord":"1","bcolor":"e3c27d","bparent":"57","empty":1},{"bid":69,"bname":"delHazelnut","bord":"2","bcolor":"f2d18c","bparent":"57","empty":1}]},{"bid":56,"bname":"Spices","bord":"2","bcolor":"b7aa9d","bparent":"33","empty":1,"children":[{"bid":63,"bname":"delAnise","bord":"1","bcolor":"ffe37b","bparent":"56","empty":1},{"bid":62,"bname":"Clove","bord":"2","bcolor":"fdc55d","bparent":"56","lastbranch":true},{"bid":64,"bname":"Cinnamon","bord":"3","bcolor":"b09076","bparent":"56","empty":1},{"bid":65,"bname":"Pepper","bord":"4","bcolor":"94897a","bparent":"56","lastbranch":true},{"bid":66,"bname":"Vanilla","bord":"5","bcolor":"e8e8b0","bparent":"56","lastbranch":true}]},{"bid":58,"bname":"Sweet","bord":"3","bcolor":"f0de97","bparent":"33","empty":1,"children":[{"bid":73,"bname":"delButterscotch","bord":"1","bcolor":"eaed91","bparent":"58","empty":1},{"bid":72,"bname":"delCaramel","bord":"2","bcolor":"fce2a9","bparent":"58","empty":1},{"bid":71,"bname":"Chocolate","bord":"3","bcolor":"674f3e","bparent":"58","lastbranch":true},{"bid":74,"bname":"Honey","bord":"4","bcolor":"e0a422","bparent":"58","lastbranch":true}]},{"bid":55,"bname":"Wood","bord":"4","bcolor":"c59565","bparent":"33","empty":1,"children":[{"bid":61,"bname":"Nutty","bord":"1","bcolor":"d4b36e","bparent":"55","lastbranch":true},{"bid":60,"bname":"Oak","bord":"2","bcolor":"c38959","bparent":"55","lastbranch":true},{"bid":59,"bname":"Pine","bord":"3","bcolor":"327755","bparent":"55","lastbranch":true}]}]},{"bid":35,"bname":"Ferment","bord":"3","bcolor":"e4ca64","bparent":"-","tree":1,"empty":1,"children":[{"bid":89,"bname":"Dairy","bord":"1","bcolor":"ffe882","bparent":"35","empty":1,"children":[{"bid":93,"bname":"Cheese","bord":"1","bcolor":"fff282","bparent":"89","lastbranch":true}]},{"bid":840,"bname":"Hops","bord":"2","bcolor":"cbd463","bparent":"35","empty":1,"children":[{"bid":841,"bname":"Bread","bord":"0","bcolor":"dcbe79","bparent":"840","lastbranch":true}]}]},{"bid":37,"bname":"Fruit","bord":"4","bcolor":"c05692","bparent":"-","tree":1,"empty":1,"children":[{"bid":75,"bname":"Berries","bord":"0","bcolor":"965dbf","bparent":"37","empty":1,"children":[{"bid":81,"bname":"Berry","bord":"1","bcolor":"53387d","bparent":"75","lastbranch":true},{"bid":79,"bname":"Cherry","bord":"2","bcolor":"cc025a","bparent":"75","empty":1},{"bid":80,"bname":"Grape","bord":"3","bcolor":"403352","bparent":"75","lastbranch":true},{"bid":78,"bname":"delPlum","bord":"4","bcolor":"a91022","bparent":"75","empty":1},{"bid":77,"bname":"delStrawberry","bord":"5","bcolor":"f21340","bparent":"75","empty":1},{"bid":82,"bname":"delBlueberry","bord":"6","bcolor":"494c85","bparent":"75","empty":1}]},{"bid":103,"bname":"Citrus","bord":"1","bcolor":"f27900","bparent":"37","empty":1,"children":[{"bid":109,"bname":"Grapefruit","bord":"1","bcolor":"ffad8b","bparent":"103","lastbranch":true},{"bid":106,"bname":"Lemon","bord":"2","bcolor":"f7f714","bparent":"103","lastbranch":true},{"bid":107,"bname":"Lime","bord":"3","bcolor":"c3d42a","bparent":"103","lastbranch":true},{"bid":108,"bname":"Orange","bord":"4","bcolor":"ffa023","bparent":"103","lastbranch":true}]},{"bid":105,"bname":"Deciduous","bord":"2","bcolor":"9cc748","bparent":"37","empty":1,"children":[{"bid":122,"bname":"Apple","bord":"1","bcolor":"9cd627","bparent":"105","empty":1},{"bid":119,"bname":"Peach","bord":"2","bcolor":"ffcba4","bparent":"105","empty":1}]},{"bid":104,"bname":"Tropical","bord":"3","bcolor":"d95b7f","bparent":"37","empty":1,"children":[{"bid":113,"bname":"Banana","bord":"1","bcolor":"ffef00","bparent":"104","lastbranch":true},{"bid":114,"bname":"delGuava","bord":"2","bcolor":"ff8db1","bparent":"104","empty":1},{"bid":112,"bname":"delLychee","bord":"3","bcolor":"f55381","bparent":"104","empty":1},{"bid":115,"bname":"Mango","bord":"4","bcolor":"fdb71c","bparent":"104","empty":1},{"bid":117,"bname":"delMelon","bord":"5","bcolor":"d2f553","bparent":"104","empty":1},{"bid":110,"bname":"Passion Fruit","bord":"6","bcolor":"e36589","bparent":"104","lastbranch":true},{"bid":111,"bname":"Pineapple","bord":"7","bcolor":"fee66c","bparent":"104","lastbranch":true}]}]},{"bid":34,"bname":"Pungent","bord":"5","bcolor":"a05ba4","bparent":"-","tree":1,"empty":1},{"bid":32,"bname":"Herb","bord":"6","bcolor":"578665","bparent":"-","tree":1,"empty":1,"children":[{"bid":76,"bname":"Floral","bord":"1","bcolor":"e04088","bparent":"32","empty":1,"children":[{"bid":85,"bname":"Jasmine","bord":"1","bcolor":"d9c271","bparent":"76","lastbranch":true},{"bid":86,"bname":"Lavender","bord":"2","bcolor":"b57edc","bparent":"76","lastbranch":true},{"bid":87,"bname":"delViolette","bord":"3","bcolor":"c266ce","bparent":"76","empty":1}]},{"bid":40,"bname":"Herb?","bord":"1","bcolor":"488542","bparent":"32","empty":1},{"bid":39,"bname":"Leaf","bord":"2","bcolor":"339966","bparent":"32","empty":1,"children":[{"bid":45,"bname":"Coffee","bord":"1","bcolor":"7b5b36","bparent":"39","lastbranch":true},{"bid":46,"bname":"Hashy","bord":"2","bcolor":"a18048","bparent":"39","lastbranch":true},{"bid":51,"bname":"Lemon Grass","bord":"3","bcolor":"cae00d","bparent":"39","lastbranch":true},{"bid":52,"bname":"Mint","bord":"4","bcolor":"64ada0","bparent":"39","lastbranch":true},{"bid":44,"bname":"Tea","bord":"5","bcolor":"718631","bparent":"39","empty":1},{"bid":47,"bname":"Eucalyptus","bord":"6","bcolor":"7cd4b1","bparent":"39","lastbranch":true}]}]}]},{"bid":"2","bname":"Effect","bcolor":"f58931","bord":1,"bparent":0,"children":[{"bid":343,"bname":"Mental","bord":"0","bcolor":"5da8b9","bparent":"-","tree":2,"empty":1,"children":[{"bid":346,"bname":"Behavior","bord":"1","bcolor":"cccc99","bparent":"343","empty":1,"children":[{"bid":353,"bname":"Energetic","bord":"1","bcolor":"ff9933","bparent":"346","lastbranch":true},{"bid":356,"bname":"Focus","bord":"2","bcolor":"ffcc33","bparent":"346","lastbranch":true},{"bid":364,"bname":"Headache","bord":"3","bcolor":"66986d","bparent":"346","lastbranch":true},{"bid":360,"bname":"Sedative","bord":"4","bcolor":"5a609f","bparent":"346","lastbranch":true}]},{"bid":347,"bname":"Mood","bord":"2","bcolor":"a282cf","bparent":"343","empty":1,"children":[{"bid":361,"bname":"Calming","bord":"2","bcolor":"88ccd2","bparent":"347","lastbranch":true},{"bid":355,"bname":"Creative","bord":"3","bcolor":"3b5998","bparent":"347","lastbranch":true},{"bid":362,"bname":"Euphoric","bord":"4","bcolor":"41788c","bparent":"347","lastbranch":true}]}]},{"bid":344,"bname":"Physical","bord":"1","bcolor":"f76a6a","bparent":"-","tree":2,"empty":1,"children":[{"bid":351,"bname":"Antibodies","bord":"1","bcolor":"a1949d","bparent":"344","empty":1,"children":[{"bid":385,"bname":"del-Anticonvulsant","bord":"1","bcolor":"ffdd08","bparent":"351","empty":1},{"bid":379,"bname":"del-Antiinflammatory","bord":"2","bcolor":"4eadc7","bparent":"351","empty":1},{"bid":378,"bname":"del-Antioxidant","bord":"3","bcolor":"93cedb","bparent":"351","empty":1},{"bid":381,"bname":"del-Bone Stimulant","bord":"4","bcolor":"c8d6a3","bparent":"351","empty":1},{"bid":380,"bname":"del-Cell Growth","bord":"5","bcolor":"85d68a","bparent":"351","empty":1}]},{"bid":349,"bname":"Digestion","bord":"2","bcolor":"da5255","bparent":"344","empty":1,"children":[{"bid":369,"bname":"Anorectic","bord":"1","bcolor":"ec355e","bparent":"349","empty":1},{"bid":372,"bname":"Appetite","bord":"2","bcolor":"910936","bparent":"349","lastbranch":true},{"bid":371,"bname":"Nausea","bord":"3","bcolor":"d99191","bparent":"349","lastbranch":true},{"bid":368,"bname":"del-Upset Stomach","bord":"4","bcolor":"8f7574","bparent":"349","empty":1}]},{"bid":348,"bname":"Sleep","bord":"3","bcolor":"65719f","bparent":"344","empty":1,"children":[{"bid":366,"bname":"Rest","bord":"1","bcolor":"7976b8","bparent":"348","lastbranch":true},{"bid":367,"bname":"del - Sleep Apnea","bord":"2","bcolor":"a487b5","bparent":"348","empty":1},{"bid":375,"bname":"del-FatigueOld","bord":"3","bcolor":"638f6a","bparent":"348","empty":1}]},{"bid":350,"bname":"Pain","bord":"4","bcolor":"6a664e","bparent":"344","empty":1,"children":[{"bid":374,"bname":"Relaxer","bord":"2","bcolor":"168082","bparent":"350","lastbranch":true},{"bid":373,"bname":"Relief","bord":"3","bcolor":"6f8248","bparent":"350","lastbranch":true}]}]}]}],"wheel_products":{"74":[{"id":"3","name":"Acapulco Gold","fill":"e0a422","bparent":"74","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"480","name":"Candy Land","fill":"e7b23e","bparent":"74","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"85","name":"Damn Sour","fill":"efc05a","bparent":"74","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"f7ce76","bparent":"74","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"360":[{"id":"3","name":"Acapulco Gold","fill":"5a609f","bparent":"360","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"261","name":"Afghan Kush","fill":"6268a4","bparent":"360","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"301","name":"Early Girl","fill":"6b70aa","bparent":"360","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"7379af","bparent":"360","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"99","name":"Golden Goat","fill":"7c81b5","bparent":"360","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"100","name":"Grandaddy Purple","fill":"8589ba","bparent":"360","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"8d92c0","bparent":"360","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"128","name":"LA Confidential","fill":"969ac6","bparent":"360","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"130","name":"Lavender Kush","fill":"9fa2cb","bparent":"360","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"463","name":"Lemon Haze","fill":"a7abd1","bparent":"360","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"455","name":"Lemon OG","fill":"b0b3d6","bparent":"360","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"400","name":"Luca Brasi","fill":"b9bbdc","bparent":"360","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"813","name":"Mendo Breath","fill":"c1c4e2","bparent":"360","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"cacce7","bparent":"360","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"364","name":"Skywalker OG","fill":"d3d4ed","bparent":"360","ord":14,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"562","name":"Triple Bodhi","fill":"dbddf2","bparent":"360","ord":15,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2060","name":"Wedding Cake","fill":"e4e5f8","bparent":"360","ord":16,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"374":[{"id":"3","name":"Acapulco Gold","fill":"168082","bparent":"374","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"261","name":"Afghan Kush","fill":"178486","bparent":"374","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"10","name":"Agent Orange","fill":"19888a","bparent":"374","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"60","name":"Bubba Kush","fill":"1a8c8f","bparent":"374","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"70","name":"Cheese","fill":"1c9193","bparent":"374","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"85","name":"Damn Sour","fill":"1d9597","bparent":"374","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"279","name":"G13","fill":"1f999c","bparent":"374","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"209ea0","bparent":"374","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"100","name":"Grandaddy Purple","fill":"22a2a5","bparent":"374","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"101","name":"Grape Ape","fill":"23a6a9","bparent":"374","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2066","name":"GSC","fill":"25abad","bparent":"374","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"130","name":"Lavender Kush","fill":"26afb2","bparent":"374","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"134","name":"Lemon Skunk","fill":"28b3b6","bparent":"374","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"813","name":"Mendo Breath","fill":"29b8bb","bparent":"374","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"2bbcbf","bparent":"374","ord":14,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"452","name":"Pineapple Express","fill":"2cc0c3","bparent":"374","ord":15,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1628","name":"Rainbow Cookies","fill":"2ec4c8","bparent":"374","ord":16,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"165","name":"Skunk #1","fill":"2fc9cc","bparent":"374","ord":17,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"168","name":"Sour Diesel","fill":"31cdd0","bparent":"374","ord":18,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"32d1d5","bparent":"374","ord":19,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"169","name":"Space Queen","fill":"34d6d9","bparent":"374","ord":20,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"175","name":"Tangie","fill":"35dade","bparent":"374","ord":21,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"37dee2","bparent":"374","ord":22,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2060","name":"Wedding Cake","fill":"38e3e6","bparent":"374","ord":23,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"411","name":"White Fire OG","fill":"3ae7eb","bparent":"374","ord":24,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"565","name":"White Walker OG","fill":"3bebef","bparent":"374","ord":25,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"355":[{"id":"3","name":"Acapulco Gold","fill":"3b5998","bparent":"355","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"47639e","bparent":"355","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"480","name":"Candy Land","fill":"536ea5","bparent":"355","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"386","name":"Flo","fill":"5f78ac","bparent":"355","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1114","name":"Green Crack","fill":"6b83b3","bparent":"355","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"455","name":"Lemon OG","fill":"778dba","bparent":"355","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"137","name":"Maui Waui","fill":"8498c1","bparent":"355","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"159","name":"Purple Haze","fill":"90a2c7","bparent":"355","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1628","name":"Rainbow Cookies","fill":"9cadce","bparent":"355","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1244","name":"Sunset Sherbet","fill":"a8b7d5","bparent":"355","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"411","name":"White Fire OG","fill":"b4c2dc","bparent":"355","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"c0cce3","bparent":"355","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"59":[{"id":"261","name":"Afghan Kush","fill":"327755","bparent":"59","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"865","name":"Black Afghani","fill":"3a7d5c","bparent":"59","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"428464","bparent":"59","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"60","name":"Bubba Kush","fill":"4a8b6b","bparent":"59","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"91","name":"Durban Poison","fill":"529273","bparent":"59","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1056","name":"Dutch Treat","fill":"5a997a","bparent":"59","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"62a082","bparent":"59","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"99","name":"Golden Goat","fill":"6aa789","bparent":"59","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"73ae91","bparent":"59","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"382","name":"Larry OG","fill":"7bb598","bparent":"59","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"400","name":"Luca Brasi","fill":"83bca0","bparent":"59","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"428","name":"Northern Lights","fill":"8bc3a7","bparent":"59","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"93caaf","bparent":"59","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"169","name":"Space Queen","fill":"9bd1b6","bparent":"59","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"177","name":"Train Wreck","fill":"a3d8be","bparent":"59","ord":14,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"572","name":"Tropicanna","fill":"abdfc5","bparent":"59","ord":15,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"366":[{"id":"261","name":"Afghan Kush","fill":"7976b8","bparent":"366","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"5","name":"Afghani","fill":"817ebd","bparent":"366","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"60","name":"Bubba Kush","fill":"8986c2","bparent":"366","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"540","name":"Fruity Pebbles","fill":"918fc7","bparent":"366","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"279","name":"G13","fill":"9997cc","bparent":"366","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"359","name":"Gelato","fill":"a29fd2","bparent":"366","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"aaa8d7","bparent":"366","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"b2b0dc","bparent":"366","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"128","name":"LA Confidential","fill":"bab9e1","bparent":"366","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"130","name":"Lavender Kush","fill":"c3c1e7","bparent":"366","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"455","name":"Lemon OG","fill":"cbc9ec","bparent":"366","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"400","name":"Luca Brasi","fill":"d3d2f1","bparent":"366","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"159","name":"Purple Haze","fill":"dbdaf6","bparent":"366","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"371":[{"id":"5","name":"Afghani","fill":"d99191","bparent":"371","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"620","name":"Banana Sherbet","fill":"dc9797","bparent":"371","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"49","name":"Black Domina","fill":"df9e9e","bparent":"371","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"398","name":"Island Sweet Skunk","fill":"e2a5a5","bparent":"371","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"569","name":"Mandarin Mint","fill":"e5acab","bparent":"371","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"428","name":"Northern Lights","fill":"e8b3b2","bparent":"371","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"526","name":"Pure Sunshine","fill":"ebbab9","bparent":"371","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"169","name":"Space Queen","fill":"eec1bf","bparent":"371","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"f1c8c6","bparent":"371","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"609","name":"True OG","fill":"f4cfcd","bparent":"371","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"354":[{"id":"5","name":"Afghani","fill":"ee7620","bparent":"354","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"ef8234","bparent":"354","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"76","name":"Chocolope","fill":"f08e48","bparent":"354","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"101","name":"Grape Ape","fill":"f29a5c","bparent":"354","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"f3a670","bparent":"354","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"f5b384","bparent":"354","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"f6bf98","bparent":"354","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"122","name":"Juicy Fruit","fill":"f7cbac","bparent":"354","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"568","name":"L`Orange","fill":"f9d7c0","bparent":"354","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"177","name":"Train Wreck","fill":"fae3d4","bparent":"354","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"357":[{"id":"5","name":"Afghani","fill":"aaaaaa","bparent":"357","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"60","name":"Bubba Kush","fill":"aaaaaa","bparent":"357","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"122","name":"Juicy Fruit","fill":"aaaaaa","bparent":"357","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"102":[{"id":"5","name":"Afghani","fill":"9aa874","bparent":"102","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"398","name":"Island Sweet Skunk","fill":"a6b47f","bparent":"102","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"128","name":"LA Confidential","fill":"b2c08a","bparent":"102","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"134","name":"Lemon Skunk","fill":"becd95","bparent":"102","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"165","name":"Skunk #1","fill":"cad9a0","bparent":"102","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"234","name":"Super Skunk","fill":"d6e6ab","bparent":"102","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"572","name":"Tropicanna","fill":"e2f2b6","bparent":"102","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"361":[{"id":"10","name":"Agent Orange","fill":"88ccd2","bparent":"361","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"32","name":"Banana Kush","fill":"8fcfd5","bparent":"361","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"865","name":"Black Afghani","fill":"97d3d8","bparent":"361","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"49","name":"Black Domina","fill":"9ed6db","bparent":"361","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"268","name":"Cannatonic","fill":"a6dade","bparent":"361","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"70","name":"Cheese","fill":"addde2","bparent":"361","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1056","name":"Dutch Treat","fill":"b5e1e5","bparent":"361","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"94","name":"Fire OG","fill":"bde5e8","bparent":"361","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"c4e8eb","bparent":"361","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"122","name":"Juicy Fruit","fill":"ccecee","bparent":"361","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"428","name":"Northern Lights","fill":"d3eff2","bparent":"361","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"168","name":"Sour Diesel","fill":"dbf3f5","bparent":"361","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"e2f6f8","bparent":"361","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"eafafb","bparent":"361","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"108":[{"id":"10","name":"Agent Orange","fill":"ffa023","bparent":"108","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"78","name":"Cinderella 99","fill":"fea735","bparent":"108","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"359","name":"Gelato","fill":"feaf48","bparent":"108","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"568","name":"L`Orange","fill":"feb75a","bparent":"108","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"569","name":"Mandarin Mint","fill":"febf6d","bparent":"108","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"fec77f","bparent":"108","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"175","name":"Tangie","fill":"fecf92","bparent":"108","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"609","name":"True OG","fill":"fed7a4","bparent":"108","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"363":[{"id":"10","name":"Agent Orange","fill":"93a592","bparent":"363","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"78","name":"Cinderella 99","fill":"9fb09e","bparent":"363","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"91","name":"Durban Poison","fill":"abbbaa","bparent":"363","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"398","name":"Island Sweet Skunk","fill":"b8c6b7","bparent":"363","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"c4d1c3","bparent":"363","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"168","name":"Sour Diesel","fill":"d0dccf","bparent":"363","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"dde7dc","bparent":"363","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"609","name":"True OG","fill":"e9f2e8","bparent":"363","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"973":[{"id":"1168","name":"AK-47","fill":"78d3ca","bparent":"973","ord":0,"ptype":"4","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"356":[{"id":"32","name":"Banana Kush","fill":"ffcc33","bparent":"356","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"fed044","bparent":"356","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"76","name":"Chocolope","fill":"fed455","bparent":"356","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"78","name":"Cinderella 99","fill":"fed866","bparent":"356","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"359","name":"Gelato","fill":"fddc78","bparent":"356","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"99","name":"Golden Goat","fill":"fde089","bparent":"356","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"129","name":"Lamb`s Bread","fill":"fde49a","bparent":"356","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"382","name":"Larry OG","fill":"fce8ac","bparent":"356","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"134","name":"Lemon Skunk","fill":"fcecbd","bparent":"356","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"452","name":"Pineapple Express","fill":"fcf0ce","bparent":"356","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"364":[{"id":"32","name":"Banana Kush","fill":"66986d","bparent":"364","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"620","name":"Banana Sherbet","fill":"6fa076","bparent":"364","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"865","name":"Black Afghani","fill":"79a980","bparent":"364","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"91","name":"Durban Poison","fill":"82b189","bparent":"364","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1114","name":"Green Crack","fill":"8cba93","bparent":"364","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"96c39c","bparent":"364","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"544","name":"Matanuska Thunder F***","fill":"9fcba6","bparent":"364","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"a9d4af","bparent":"364","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"364","name":"Skywalker OG","fill":"b2dcb9","bparent":"364","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"572","name":"Tropicanna","fill":"bce5c2","bparent":"364","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"113":[{"id":"32","name":"Banana Kush","fill":"ffef00","bparent":"113","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"620","name":"Banana Sherbet","fill":"fff55f","bparent":"113","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"362":[{"id":"620","name":"Banana Sherbet","fill":"41788c","bparent":"362","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"42","name":"Big Buddha Cheese","fill":"467c8f","bparent":"362","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"480","name":"Candy Land","fill":"4b8093","bparent":"362","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"85","name":"Damn Sour","fill":"508496","bparent":"362","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"91","name":"Durban Poison","fill":"56889a","bparent":"362","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"301","name":"Early Girl","fill":"5b8c9d","bparent":"362","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"386","name":"Flo","fill":"6090a1","bparent":"362","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"279","name":"G13","fill":"6694a4","bparent":"362","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"359","name":"Gelato","fill":"6b98a8","bparent":"362","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"709cab","bparent":"362","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"75a0af","bparent":"362","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"382","name":"Larry OG","fill":"7ba4b2","bparent":"362","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"588","name":"Lavender Jones","fill":"80a8b6","bparent":"362","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"569","name":"Mandarin Mint","fill":"85acb9","bparent":"362","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"544","name":"Matanuska Thunder F***","fill":"8bb0bd","bparent":"362","ord":14,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"428","name":"Northern Lights","fill":"90b4c0","bparent":"362","ord":15,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"165","name":"Skunk #1","fill":"95b8c4","bparent":"362","ord":16,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"9abcc7","bparent":"362","ord":17,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1244","name":"Sunset Sherbet","fill":"a0c0cb","bparent":"362","ord":18,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"241","name":"Super Lemon Haze","fill":"a5c4ce","bparent":"362","ord":19,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"175","name":"Tangie","fill":"aac8d2","bparent":"362","ord":20,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"b0ccd5","bparent":"362","ord":21,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"177","name":"Train Wreck","fill":"b5d0d9","bparent":"362","ord":22,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"562","name":"Triple Bodhi","fill":"bad4dc","bparent":"362","ord":23,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"572","name":"Tropicanna","fill":"bfd8e0","bparent":"362","ord":24,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2060","name":"Wedding Cake","fill":"c5dce3","bparent":"362","ord":25,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"411","name":"White Fire OG","fill":"cae0e7","bparent":"362","ord":26,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"cfe4ea","bparent":"362","ord":27,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"109":[{"id":"620","name":"Banana Sherbet","fill":"ffad8b","bparent":"109","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"86","name":"Damnesia","fill":"feb293","bparent":"109","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"99","name":"Golden Goat","fill":"feb89c","bparent":"109","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"128","name":"LA Confidential","fill":"fdbea4","bparent":"109","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"526","name":"Pure Sunshine","fill":"fdc4ad","bparent":"109","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1244","name":"Sunset Sherbet","fill":"fdcab5","bparent":"109","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"562","name":"Triple Bodhi","fill":"fcd0be","bparent":"109","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2060","name":"Wedding Cake","fill":"fcd6c6","bparent":"109","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"93":[{"id":"42","name":"Big Buddha Cheese","fill":"fff282","bparent":"93","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"70","name":"Cheese","fill":"fff49b","bparent":"93","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"fff7b4","bparent":"93","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"359":[{"id":"42","name":"Big Buddha Cheese","fill":"aaaaaa","bparent":"359","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"49","name":"Black Domina","fill":"aaaaaa","bparent":"359","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"aaaaaa","bparent":"359","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"60","name":"Bubba Kush","fill":"aaaaaa","bparent":"359","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"70","name":"Cheese","fill":"aaaaaa","bparent":"359","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"72","name":"Chemdawg","fill":"aaaaaa","bparent":"359","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"353":[{"id":"42","name":"Big Buddha Cheese","fill":"ff9933","bparent":"353","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"480","name":"Candy Land","fill":"fe9f3f","bparent":"353","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"76","name":"Chocolope","fill":"fea54c","bparent":"353","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"86","name":"Damnesia","fill":"feab58","bparent":"353","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"91","name":"Durban Poison","fill":"feb265","bparent":"353","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"386","name":"Flo","fill":"fdb872","bparent":"353","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1114","name":"Green Crack","fill":"fdbe7e","bparent":"353","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"122","name":"Juicy Fruit","fill":"fdc58b","bparent":"353","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"137","name":"Maui Waui","fill":"fdcb98","bparent":"353","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"526","name":"Pure Sunshine","fill":"fdd1a4","bparent":"353","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1244","name":"Sunset Sherbet","fill":"fcd7b1","bparent":"353","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"241","name":"Super Lemon Haze","fill":"fcdebe","bparent":"353","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1037","name":"Thunderbud","fill":"fce4ca","bparent":"353","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"fcead7","bparent":"353","ord":13,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"372":[{"id":"865","name":"Black Afghani","fill":"910936","bparent":"372","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"72","name":"Chemdawg","fill":"9e0e3e","bparent":"372","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"85","name":"Damn Sour","fill":"ab1446","bparent":"372","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2066","name":"GSC","fill":"b81a4f","bparent":"372","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"400","name":"Luca Brasi","fill":"c61f57","bparent":"372","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"137","name":"Maui Waui","fill":"d32560","bparent":"372","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"565","name":"White Walker OG","fill":"e02b68","bparent":"372","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"65":[{"id":"865","name":"Black Afghani","fill":"94897a","bparent":"65","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"86","name":"Damnesia","fill":"a3998d","bparent":"65","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"301","name":"Early Girl","fill":"b2aaa0","bparent":"65","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"81":[{"id":"49","name":"Black Domina","fill":"53387d","bparent":"81","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"58","name":"Blue Dream","fill":"593e83","bparent":"81","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"480","name":"Candy Land","fill":"5f4489","bparent":"81","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"386","name":"Flo","fill":"654a90","bparent":"81","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"359","name":"Gelato","fill":"6b5096","bparent":"81","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"72569d","bparent":"81","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"100","name":"Grandaddy Purple","fill":"785ca3","bparent":"81","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"101","name":"Grape Ape","fill":"7e62aa","bparent":"81","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"400","name":"Luca Brasi","fill":"8468b0","bparent":"81","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"813","name":"Mendo Breath","fill":"8b6eb7","bparent":"81","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1628","name":"Rainbow Cookies","fill":"9174bd","bparent":"81","ord":10,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"169","name":"Space Queen","fill":"977ac4","bparent":"81","ord":11,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1244","name":"Sunset Sherbet","fill":"9d80ca","bparent":"81","ord":12,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"46":[{"id":"49","name":"Black Domina","fill":"a18048","bparent":"46","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"301","name":"Early Girl","fill":"af915e","bparent":"46","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"364","name":"Skywalker OG","fill":"bda275","bparent":"46","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"85":[{"id":"58","name":"Blue Dream","fill":"d9c271","bparent":"85","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"60":[{"id":"60","name":"Bubba Kush","fill":"c38959","bparent":"60","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"386","name":"Flo","fill":"ca9060","bparent":"60","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"279","name":"G13","fill":"d19767","bparent":"60","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"d89e6e","bparent":"60","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"dfa575","bparent":"60","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"e6ac7c","bparent":"60","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"411","name":"White Fire OG","fill":"edb383","bparent":"60","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"f4ba8a","bparent":"60","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"45":[{"id":"60","name":"Bubba Kush","fill":"7b5b36","bparent":"45","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"373":[{"id":"268","name":"Cannatonic","fill":"6f8248","bparent":"373","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1056","name":"Dutch Treat","fill":"83965c","bparent":"373","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"97aa70","bparent":"373","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"abbf84","bparent":"373","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"562","name":"Triple Bodhi","fill":"bfd398","bparent":"373","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"107":[{"id":"268","name":"Cannatonic","fill":"c3d42a","bparent":"107","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"94","name":"Fire OG","fill":"d4e253","bparent":"107","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1114","name":"Green Crack","fill":"e5f07c","bparent":"107","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"61":[{"id":"72","name":"Chemdawg","fill":"a58265","bparent":"61","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"439","name":"GG #4","fill":"cead91","bparent":"61","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"842":[{"id":"72","name":"Chemdawg","fill":"58ab9e","bparent":"842","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"65b9ab","bparent":"842","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"364","name":"Skywalker OG","fill":"72c7b9","bparent":"842","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"168","name":"Sour Diesel","fill":"80d5c7","bparent":"842","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"677","name":"Sour Tangie","fill":"8de3d5","bparent":"842","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"411","name":"White Fire OG","fill":"9af1e3","bparent":"842","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"71":[{"id":"76","name":"Chocolope","fill":"674f3e","bparent":"71","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"544","name":"Matanuska Thunder F***","fill":"836c5c","bparent":"71","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"110":[{"id":"76","name":"Chocolope","fill":"e36589","bparent":"110","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"78","name":"Cinderella 99","fill":"e9819f","bparent":"110","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"540","name":"Fruity Pebbles","fill":"ef9db5","bparent":"110","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"118","name":"Jack Herer","fill":"f5b9cb","bparent":"110","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"101":[{"id":"85","name":"Damn Sour","fill":"5cc494","bparent":"101","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1114","name":"Green Crack","fill":"71deac","bparent":"101","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"382":[{"id":"86","name":"Damnesia","fill":"bfd2aa","bparent":"382","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"66":[{"id":"91","name":"Durban Poison","fill":"e8e8b0","bparent":"66","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"51":[{"id":"279","name":"G13","fill":"cae00d","bparent":"51","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"338","name":"Harlequin","fill":"d8ea3a","bparent":"51","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"315","name":"White Widow","fill":"e6f467","bparent":"51","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"106":[{"id":"99","name":"Golden Goat","fill":"f7f714","bparent":"106","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"817","name":"Head Cheese","fill":"f7f722","bparent":"106","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"122","name":"Juicy Fruit","fill":"f8f830","bparent":"106","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"382","name":"Larry OG","fill":"f9f93f","bparent":"106","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"463","name":"Lemon Haze","fill":"fafa4d","bparent":"106","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"455","name":"Lemon OG","fill":"fbfb5c","bparent":"106","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"134","name":"Lemon Skunk","fill":"fbfb6a","bparent":"106","ord":6,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"146","name":"OG Kush","fill":"fcfc78","bparent":"106","ord":7,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"241","name":"Super Lemon Haze","fill":"fdfd87","bparent":"106","ord":8,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"177","name":"Train Wreck","fill":"fefe95","bparent":"106","ord":9,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"80":[{"id":"100","name":"Grandaddy Purple","fill":"403352","bparent":"80","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"101","name":"Grape Ape","fill":"6a5c7d","bparent":"80","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1037","name":"Thunderbud","fill":"9586a9","bparent":"80","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"52":[{"id":"2066","name":"GSC","fill":"64ada0","bparent":"52","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"428","name":"Northern Lights","fill":"7fc8bb","bparent":"52","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"9ae3d6","bparent":"52","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"841":[{"id":"2066","name":"GSC","fill":"dcbe79","bparent":"841","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"813","name":"Mendo Breath","fill":"e1c584","bparent":"841","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"159","name":"Purple Haze","fill":"e7cc8f","bparent":"841","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1628","name":"Rainbow Cookies","fill":"edd49a","bparent":"841","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"433","name":"Thin Mint Cookies","fill":"f2dba5","bparent":"841","ord":4,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"2060","name":"Wedding Cake","fill":"f8e2b0","bparent":"841","ord":5,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"111":[{"id":"122","name":"Juicy Fruit","fill":"fee66c","bparent":"111","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"137","name":"Maui Waui","fill":"fdea87","bparent":"111","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"452","name":"Pineapple Express","fill":"fdeea2","bparent":"111","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"1037","name":"Thunderbud","fill":"fcf2bd","bparent":"111","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"62":[{"id":"129","name":"Lamb`s Bread","fill":"fdc55d","bparent":"62","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"159","name":"Purple Haze","fill":"fdcc72","bparent":"62","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"562","name":"Triple Bodhi","fill":"fed488","bparent":"62","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"565","name":"White Walker OG","fill":"fedc9d","bparent":"62","ord":3,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"86":[{"id":"588","name":"Lavender Jones","fill":"b57edc","bparent":"86","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"130","name":"Lavender Kush","fill":"c496e4","bparent":"86","ord":1,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"},{"id":"159","name":"Purple Haze","fill":"d3aeec","bparent":"86","ord":2,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"376":[{"id":"159","name":"Purple Haze","fill":"aaaaaa","bparent":"376","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"377":[{"id":"234","name":"Super Skunk","fill":"aaaaaa","bparent":"377","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}],"47":[{"id":"411","name":"White Fire OG","fill":"7cd4b1","bparent":"47","ord":0,"ptype":"1","product":"true","size":1,"value":0.1,"mathx":0,"pcids":null,"fav":"0"}]},"good_nodes":["841","109","81","85","93","113","101","61","45","62","60","86","46","106","59","107","51","842","80","71","52","108","65","102","74","66","110","47","111","366","353","372","374","356","361","373","364","371","355","362","360"],"tree_settings":{"wheel_type":"wheel","wheel_product_link_type":"master_product","wheel_id":"master","bpid":"666","menu_item_amount":0}},"bps":{"bp_info":{"bpid":"666","uid":"1","name":"Master Wheel","bpname":"Master Wheel","bpemail":"masterwheel@cannabiscope.com","bpslug":"master","bptype":"4","bpstatus":"1","bpvisible":"0","menumoded":"2017-10-23 15:13:28","created":"2016-11-10 11:26:00","type_name":"Cultivator","entity_slug":"cultivator","menu_control":null,"country":"US","bplicensetype":"0","bpcurrency":"USD","address_line_1":"","cstate":"","post_index":"","bpbranches":"1,2","uname":"CS Admin","ulogo":"1-Vm8bk5oXdY.png","last_moded":{"y":1,"m":6,"d":1,"h":1,"i":45,"s":32}}},"app_data":{"common":{"business_types":[{"bptid":"1","bptname":"Personal","bptstatus":"1","slug":"user","wbid":"0","ord":"0"},{"bptid":"2","bptname":"Dispensary","bptstatus":"1","slug":"dispensary","wbid":"922","ord":"1"},{"bptid":"3","bptname":"Seed Bank","bptstatus":"1","slug":"seedbank","wbid":"923","ord":"3"},{"bptid":"4","bptname":"Cultivator","bptstatus":"1","slug":"cultivator","wbid":"924","ord":"5"},{"bptid":"5","bptname":"Laboratory","bptstatus":"1","slug":"laboratory","wbid":"925","ord":"9"},{"bptid":"8","bptname":"Delivery","bptstatus":"1","slug":"delivery","wbid":"928","ord":"2"},{"bptid":"9","bptname":"Distributor","bptstatus":"1","slug":"distributor","wbid":"929","ord":"7"},{"bptid":"10","bptname":"Producer","bptstatus":"1","slug":"producer","wbid":"930","ord":"6"},{"bptid":"13","bptname":"Doctor","bptstatus":"1","slug":"doctor","wbid":"935","ord":"8"},{"bptid":"14","bptname":"Educator","bptstatus":"1","slug":"educator","wbid":"970","ord":"11"},{"bptid":"15","bptname":"Media","bptstatus":"1","slug":"media","wbid":"0","ord":"10"},{"bptid":"16","bptname":"Event","bptstatus":"1","slug":"event","wbid":"0","ord":"12"},{"bptid":"99","bptname":"Other","bptstatus":"1","slug":"entity","wbid":"0","ord":"99"}],"product_types":[{"id":"1","name":"Flower","slug":"flower"},{"id":"2","name":"Clone","slug":"clone"},{"id":"3","name":"Seed","slug":"seed"},{"id":"4","name":"Concentrate","slug":"concentrate"},{"id":"5","name":"Edible","slug":"edible"},{"id":"6","name":"Topical","slug":"topical"},{"id":"7","name":"Prerolls","slug":"prerolls"},{"id":"8","name":"Extracts","slug":"extracts"},{"id":"9","name":"Ingestibles","slug":"ingestibles"},{"id":"10","name":"CBD","slug":"cbd"},{"id":"11","name":"Paraphernalia","slug":"paraphernalia"},{"id":"12","name":"Cartridge","slug":"cartridge"},{"id":"13","name":"Non Cannabis","slug":"non-cannabis"},{"id":"14","name":"Ancillary","slug":"ancillary"},{"id":"15","name":"Supplies","slug":"supplies"},{"id":"16","name":"Merchandise","slug":"merchandise"},{"id":"17","name":"Vape","slug":"vape"},{"id":"18","name":"Nutraceutical","slug":"nutraceutical"},{"name":"Gummy","id":"878","slug":"Gummy"},{"name":"Cookie","id":"879","slug":"Cookie"},{"name":"Brownie","id":"880","slug":"Brownie"},{"name":"Coffee","id":"882","slug":"Coffee"},{"name":"Tea","id":"883","slug":"Tea"},{"name":"Cola","id":"884","slug":"Cola"},{"name":"Energy Drink","id":"885","slug":"Energy Drink"},{"name":"Fruit","id":"886","slug":"Fruit"},{"name":"Chocolate","id":"887","slug":"Chocolate"},{"name":"Butter","id":"888","slug":"Butter"},{"name":"Oil","id":"889","slug":"Oil"},{"name":"Taffy","id":"890","slug":"Taffy"},{"name":"Space Cake","id":"891","slug":"Space Cake"},{"name":"Rice Krispies","id":"898","slug":"Rice Krispies"},{"name":"Candy","id":"899","slug":"Candy"},{"name":"Ice Cream","id":"900","slug":"Ice Cream"},{"name":"Mint","id":"904","slug":"Mint"},{"name":"Caramel","id":"905","slug":"Caramel"},{"name":"Gum","id":"906","slug":"Gum"},{"name":"Popcorn","id":"907","slug":"Popcorn"},{"name":"Suckers","id":"908","slug":"Suckers"},{"name":"Amber","id":"939","slug":"Amber"},{"name":"Budder","id":"940","slug":"Budder"},{"name":"Crumble","id":"941","slug":"Crumble"},{"name":"Cured Resin","id":"942","slug":"Cured Resin"},{"name":"Honeycomb","id":"943","slug":"Honeycomb"},{"name":"Live Resin","id":"944","slug":"Live Resin"},{"name":"Oil","id":"945","slug":"Oil"},{"name":"Rosin","id":"946","slug":"Rosin"},{"name":"Sap","id":"947","slug":"Sap"},{"name":"Shatter","id":"948","slug":"Shatter"},{"name":"Bubble Hash","id":"951","slug":"Bubble Hash"},{"name":"Dry Ice","id":"952","slug":"Dry Ice"},{"name":"Ice Wax","id":"953","slug":"Ice Wax"},{"name":"Kief","id":"954","slug":"Kief"},{"name":"Cartridge","id":"973","slug":"Cartridge"},{"name":"Disposable","id":"974","slug":"Disposable"},{"name":"Live Sugar","id":"975","slug":"Live Sugar"},{"name":"Crystalline","id":"976","slug":"Crystalline"},{"name":"Sauce","id":"977","slug":"Sauce"},{"name":"Distillate","id":"980","slug":"Distillate"}],"product_subtypes":{"877":{"id":"877","name":"Solid","bparent":"0"},"998":{"id":"998","name":"Topical","bparent":"0"},"971":{"id":"971","name":"Vape","bparent":"0"},"1016":{"id":"1016","name":"Wellness","bparent":"0"},"984":{"id":"984","name":"Culinary","bparent":"0"},"938":{"id":"938","name":"Concentrate","bparent":"0"},"1017":{"id":"1017","name":"Pet","bparent":"0"},"987":{"id":"987","name":"Beauty","bparent":"0"},"988":{"id":"988","name":"Ingestible","bparent":"0"},"950":{"id":"950","name":"Hash","bparent":"0"},"881":{"id":"881","name":"Liquid","bparent":"0"},"878":{"id":"878","name":"Gummy","bparent":"877"},"879":{"id":"879","name":"Cookie","bparent":"877"},"880":{"id":"880","name":"Brownie","bparent":"877"},"908":{"id":"908","name":"Suckers","bparent":"877"},"907":{"id":"907","name":"Popcorn","bparent":"877"},"906":{"id":"906","name":"Gum","bparent":"877"},"905":{"id":"905","name":"Caramel","bparent":"877"},"904":{"id":"904","name":"Mint","bparent":"877"},"899":{"id":"899","name":"Candy","bparent":"877"},"898":{"id":"898","name":"Rice Krispies","bparent":"877"},"891":{"id":"891","name":"Space Cake","bparent":"877"},"887":{"id":"887","name":"Chocolate","bparent":"877"},"890":{"id":"890","name":"Taffy","bparent":"877"},"883":{"id":"883","name":"Tea","bparent":"881"},"885":{"id":"885","name":"Energy Drink","bparent":"881"},"884":{"id":"884","name":"Cola","bparent":"881"},"886":{"id":"886","name":"Fruit","bparent":"881"},"882":{"id":"882","name":"Coffee","bparent":"881"},"976":{"id":"976","name":"Crystalline","bparent":"938"},"975":{"id":"975","name":"Live Sugar","bparent":"938"},"1051":{"id":"1051","name":"CO2 Oil","bparent":"938"},"980":{"id":"980","name":"Distillate","bparent":"938"},"977":{"id":"977","name":"Sauce","bparent":"938"},"948":{"id":"948","name":"Shatter","bparent":"938"},"1050":{"id":"1050","name":"Wax","bparent":"938"},"939":{"id":"939","name":"Amber","bparent":"938"},"940":{"id":"940","name":"Budder","bparent":"938"},"941":{"id":"941","name":"Crumble","bparent":"938"},"942":{"id":"942","name":"Cured Resin","bparent":"938"},"943":{"id":"943","name":"Honeycomb","bparent":"938"},"944":{"id":"944","name":"Live Resin","bparent":"938"},"945":{"id":"945","name":"Oil","bparent":"938"},"946":{"id":"946","name":"Rosin","bparent":"938"},"947":{"id":"947","name":"Sap","bparent":"938"},"954":{"id":"954","name":"Kief","bparent":"950"},"952":{"id":"952","name":"Dry Ice","bparent":"950"},"951":{"id":"951","name":"Bubble Hash","bparent":"950"},"953":{"id":"953","name":"Ice Wax","bparent":"950"},"1049":{"id":"1049","name":"Pod","bparent":"971"},"974":{"id":"974","name":"Disposable","bparent":"971"},"973":{"id":"973","name":"Cartridge","bparent":"971"},"889":{"id":"889","name":"Oil","bparent":"984"},"900":{"id":"900","name":"Ice Cream","bparent":"984"},"888":{"id":"888","name":"Butter","bparent":"984"},"1007":{"id":"1007","name":"Skin","bparent":"987"},"1008":{"id":"1008","name":"Hair","bparent":"987"},"1026":{"id":"1026","name":"Capsules","bparent":"988"},"1015":{"id":"1015","name":"RSO","bparent":"988"},"991":{"id":"991","name":"Elixir","bparent":"988"},"992":{"id":"992","name":"Oral Spray","bparent":"988"},"993":{"id":"993","name":"Nasal Spray","bparent":"988"},"994":{"id":"994","name":"Tab","bparent":"988"},"995":{"id":"995","name":"Tincture","bparent":"988"},"990":{"id":"990","name":"Drop","bparent":"988"},"997":{"id":"997","name":"Supplement","bparent":"988"},"996":{"id":"996","name":"Pill","bparent":"988"},"1001":{"id":"1001","name":"Body Spray","bparent":"998"},"1002":{"id":"1002","name":"Creams","bparent":"998"},"999":{"id":"999","name":"Balm","bparent":"998"},"1000":{"id":"1000","name":"Bath Salt","bparent":"998"},"1005":{"id":"1005","name":"Salves","bparent":"998"},"1003":{"id":"1003","name":"Lotions","bparent":"998"},"1004":{"id":"1004","name":"Patches","bparent":"998"},"1024":{"id":"1024","name":"Topical","bparent":"1016"},"1023":{"id":"1023","name":"Spray","bparent":"1016"},"1022":{"id":"1022","name":"Oil","bparent":"1016"},"1021":{"id":"1021","name":"Gummies","bparent":"1016"},"1020":{"id":"1020","name":"Capsules","bparent":"1016"},"1025":{"id":"1025","name":"Chews","bparent":"1017"},"1018":{"id":"1018","name":"Oil","bparent":"1017"},"1019":{"id":"1019","name":"Spray","bparent":"1017"}},"product_types_obj":{"1":{"name":"Flower"},"2":{"name":"Clone"},"3":{"name":"Seed"},"4":{"name":"Concentrate"},"5":{"name":"Edible"},"6":{"name":"Topical"},"7":{"name":"Prerolls"},"8":{"name":"Extracts"},"9":{"name":"Ingestibles"},"10":{"name":"CBD"},"11":{"name":"Paraphernalia"},"12":{"name":"Cartridge"},"13":{"name":"Non Cannabis"},"14":{"name":"Ancillary"},"15":{"name":"Supplies"},"16":{"name":"Merchandise"},"17":{"name":"Vape"},"18":{"name":"Nutraceutical"},"878":{"name":"Gummy"},"879":{"name":"Cookie"},"880":{"name":"Brownie"},"882":{"name":"Coffee"},"883":{"name":"Tea"},"884":{"name":"Cola"},"885":{"name":"Energy Drink"},"886":{"name":"Fruit"},"887":{"name":"Chocolate"},"888":{"name":"Butter"},"889":{"name":"Oil"},"890":{"name":"Taffy"},"891":{"name":"Space Cake"},"898":{"name":"Rice Krispies"},"899":{"name":"Candy"},"900":{"name":"Ice Cream"},"904":{"name":"Mint"},"905":{"name":"Caramel"},"906":{"name":"Gum"},"907":{"name":"Popcorn"},"908":{"name":"Suckers"},"939":{"name":"Amber"},"940":{"name":"Budder"},"941":{"name":"Crumble"},"942":{"name":"Cured Resin"},"943":{"name":"Honeycomb"},"944":{"name":"Live Resin"},"945":{"name":"Oil"},"946":{"name":"Rosin"},"947":{"name":"Sap"},"948":{"name":"Shatter"},"951":{"name":"Bubble Hash"},"952":{"name":"Dry Ice"},"953":{"name":"Ice Wax"},"954":{"name":"Kief"},"973":{"name":"Cartridge"},"974":{"name":"Disposable"},"975":{"name":"Live Sugar"},"976":{"name":"Crystalline"},"977":{"name":"Sauce"},"980":{"name":"Distillate"}},"strain_types":{"44":{"id":"44","tname":"Sativa","status":"1","ord":"1"},"45":{"id":"45","tname":"Hybrid Mostly Sativa","status":"1","ord":"2"},"46":{"id":"46","tname":"Hybrid 50\/50","status":"1","ord":"3"},"47":{"id":"47","tname":"Hybrid Mostly Indica","status":"1","ord":"4"},"48":{"id":"48","tname":"Indica","status":"1","ord":"5"}},"default_dic":{"1":{"doid":"1","doname":"Flowering Time","doslug":"flowering_time","dopage":"strain","dotype":"1","dostatus":"1","doord":"5"},"2":{"doid":"2","doname":"Height Soil","doslug":"height_soil","dopage":"strain","dotype":"1","dostatus":"1","doord":"6"},"3":{"doid":"3","doname":"Height Hydroponic","doslug":"height_hydroponic","dopage":"strain","dotype":"1","dostatus":"1","doord":"7"},"4":{"doid":"4","doname":"Yield Soil","doslug":"yield_soil","dopage":"strain","dotype":"1","dostatus":"1","doord":"8"},"5":{"doid":"5","doname":"Yield Hydroponic","doslug":"yield_hydroponic","dopage":"strain","dotype":"1","dostatus":"1","doord":"9"},"6":{"doid":"6","doname":"Seed Type","doslug":"seed_type","dopage":"strain","dotype":"1","dostatus":"1","doord":"10"},"7":{"doid":"7","doname":"Indoor","doslug":"indoor","dopage":"strain","dotype":"1","dostatus":"1","doord":"11"},"8":{"doid":"8","doname":"Outdoor","doslug":"outdoor","dopage":"strain","dotype":"1","dostatus":"1","doord":"12"},"9":{"doid":"9","doname":"Greenhouse","doslug":"greenhouse","dopage":"strain","dotype":"1","dostatus":"1","doord":"13"},"10":{"doid":"10","doname":"7 Weeks Or Less","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"11":{"doid":"11","doname":"7 - 8 Weeks","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"12":{"doid":"12","doname":"8 - 9 Weeks","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"13":{"doid":"13","doname":"10 - 11 Weeks","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"14":{"doid":"14","doname":"11 - 12 Weeks","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"15":{"doid":"15","doname":"12 Weeks or more","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"16":{"doid":"16","doname":"Low","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"17":{"doid":"17","doname":"Hight","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"18":{"doid":"18","doname":"500 - g \/ plant","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"19":{"doid":"19","doname":"500 - 650 g \/ plant","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"20":{"doid":"20","doname":"650+ g \/ plant","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"21":{"doid":"21","doname":"Regular","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"22":{"doid":"22","doname":"Female","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"23":{"doid":"23","doname":"Autoflower","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"24":{"doid":"24","doname":"Temperate","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"25":{"doid":"25","doname":"Cool","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"26":{"doid":"26","doname":"Cold","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"27":{"doid":"27","doname":"Tropical","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"28":{"doid":"28","doname":"Continental","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"29":{"doid":"29","doname":"Mediterranean","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"30":{"doid":"30","doname":"Moist","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"31":{"doid":"31","doname":"Shaded","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"32":{"doid":"32","doname":"Dry","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"33":{"doid":"33","doname":"Light Depth","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"34":{"doid":"34","doname":"9 - 10 Weeks","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"35":{"doid":"35","doname":"Description","doslug":"description","dopage":"all","dotype":"1","dostatus":"1","doord":"1"},"36":{"doid":"36","doname":"Product Name","doslug":"product_name","dopage":"all","dotype":"1","dostatus":"1","doord":"-1"},"37":{"doid":"37","doname":"Strains in Product","doslug":"strains_in_product","dopage":"concentrate","dotype":"1","dostatus":"1","doord":"1"},"38":{"doid":"38","doname":"Ingredients","doslug":"ingredients","dopage":"concentrate","dotype":"1","dostatus":"1","doord":"4"},"39":{"doid":"39","doname":"Consumption Advice","doslug":"consumption_advice","dopage":"concentrate","dotype":"1","dostatus":"1","doord":"5"},"40":{"doid":"40","doname":"Product Type","doslug":"product_type_cascade","dopage":"concentrate","dotype":"1","dostatus":"1","doord":"3"},"41":{"doid":"41","doname":"Parents","doslug":"parents","dopage":"strain","dotype":"1","dostatus":"1","doord":"4"},"42":{"doid":"42","doname":"Children","doslug":"children","dopage":"strain","dotype":"1","dostatus":"1","doord":"5"},"43":{"doid":"43","doname":"Strain Type","doslug":"strain-type","dopage":"strain","dotype":"1","dostatus":"1","doord":"3"},"44":{"doid":"44","doname":"Sativa","doslug":"","dopage":"strtype","dotype":"0","dostatus":"1","doord":"1"},"45":{"doid":"45","doname":"Hybrid Mostly Sativa","doslug":"","dopage":"strtype","dotype":"0","dostatus":"1","doord":"2"},"46":{"doid":"46","doname":"Hybrid 50\/50","doslug":"","dopage":"strtype","dotype":"0","dostatus":"1","doord":"3"},"47":{"doid":"47","doname":"Hybrid Mostly Indica","doslug":"","dopage":"strtype","dotype":"0","dostatus":"1","doord":"4"},"48":{"doid":"48","doname":"Indica","doslug":"","dopage":"strtype","dotype":"0","dostatus":"1","doord":"5"},"49":{"doid":"49","doname":"Nutrition Facts","doslug":"nutrition-facts","dopage":"all","dotype":"1","dostatus":"1","doord":"0"},"50":{"doid":"50","doname":"Servings per Package","doslug":"servings_per_package","dopage":"","dotype":"1","dostatus":"1","doord":"0"},"51":{"doid":"51","doname":"Serving Size","doslug":"serving_size","dopage":"","dotype":"1","dostatus":"1","doord":"0"},"52":{"doid":"52","doname":"Minimum Cannabinoid Content","doslug":"minimum_cannabinoid_content","dopage":"","dotype":"1","dostatus":"1","doord":"0"},"53":{"doid":"53","doname":"Net Weight","doslug":"net_weight","dopage":"","dotype":"1","dostatus":"1","doord":"0"},"54":{"doid":"54","doname":"Product Extra Name","doslug":"product_extra_name","dopage":"all","dotype":"1","dostatus":"1","doord":"-1"},"55":{"doid":"55","doname":"PACKAGE ID","doslug":"package_id","dopage":"all","dotype":"1","dostatus":"1","doord":"-1"},"57":{"doid":"57","doname":"High CBD","doslug":"high_cbd","dopage":"all","dotype":"1","dostatus":"1","doord":"11"},"58":{"doid":"58","doname":"No","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"0"},"59":{"doid":"59","doname":"Yes","doslug":"","dopage":"","dotype":"0","dostatus":"1","doord":"1"}},"score_labels":{"tabs":{"24":{"slid":"24","slname":"cannabinoids","slord":"0","slparent":"0","sltype":"0","slslug":null,"sloptions":null},"25":{"slid":"25","slname":"terpenoids","slord":"0","slparent":"0","sltype":"0","slslug":null,"sloptions":null},"26":{"slid":"26","slname":"Safety and Quality","slord":"0","slparent":"0","sltype":"0","slslug":null,"sloptions":null}},"labels":{"24":[{"slid":"1","slname":"THC","slord":"1","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"2","slname":"THCa","slord":"2","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"3","slname":"THCv","slord":"3","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"4","slname":"CBC","slord":"4","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"5","slname":"CBCa","slord":"5","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"6","slname":"CBD","slord":"6","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"7","slname":"CBDa","slord":"7","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"8","slname":"CBG","slord":"8","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"9","slname":"CBGa","slord":"9","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"10","slname":"CBN","slord":"10","slparent":"24","sltype":"0","slslug":null,"sloptions":null},{"slid":"11","slname":"CGCa","slord":"11","slparent":"24","sltype":"0","slslug":null,"sloptions":null}],"25":[{"slid":"12","slname":"a-Pinene","slord":"1","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"13","slname":"b-Pinene","slord":"2","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"14","slname":"b-Myrcene","slord":"3","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"15","slname":"Limonene","slord":"4","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"16","slname":"Terpinolene","slord":"5","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"17","slname":"Cis-Ocimene","slord":"6","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"18","slname":"Linalool","slord":"7","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"19","slname":"b-Caryophyllene","slord":"8","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"20","slname":"Humulene","slord":"9","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"21","slname":"b-Eudesmol","slord":"10","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"22","slname":"Caryophllene Oxide","slord":"11","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"23","slname":"Trans-Nerolidol","slord":"12","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"38","slname":"Bisobolol","slord":"13","slparent":"25","sltype":"0","slslug":null,"sloptions":null},{"slid":"39","slname":"Terpinene","slord":"13","slparent":"25","sltype":"0","slslug":null,"sloptions":null}],"26":[{"slid":"27","slname":"Visual","slord":"1","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"28","slname":"Heavy Metals","slord":"2","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"29","slname":"Pesticides","slord":"3","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"30","slname":"Residual Solvents","slord":"4","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"31","slname":"Microbiological","slord":"5","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"32","slname":"Mycotoxins","slord":"6","slparent":"26","sltype":"1","slslug":null,"sloptions":null},{"slid":"33","slname":"Moisture Content","slord":"7","slparent":"26","sltype":"0","slslug":null,"sloptions":null}]},"info":[{"slid":"34","slname":"Sample ID","slord":"1","slparent":"-1","sltype":"0","slslug":null,"sloptions":null},{"slid":"35","slname":"Sample Type","slord":"2","slparent":"-1","sltype":"2","slslug":null,"sloptions":{"options":{"-0":"- select type -","-1":"Flower","-5":"Concentrate","-3":"Edibles"}}},{"slid":"36","slname":"Sample Mass","slord":"3","slparent":"-1","sltype":"0","slslug":null,"sloptions":null},{"slid":"37","slname":"Submitted","slord":"4","slparent":"-1","sltype":"3","slslug":null,"sloptions":null}]},"max_score":{"1":"31.86","2":"33","3":"12.3","4":"0.4","5":"0.4","6":"16","7":"1","8":"1","9":"2.747","10":"0.164","12":"64.75","13":"0.136","14":"1.045","15":"0.73","16":"2.52","17":"0.451","18":"0.27","19":"1.02","20":"3.73","21":"0.005","22":"0.006","23":"0.092"}},"u":{"id":1414,"name":"arkcloudtech","uslug":"arkcloudtech","connected":["p1087","p212","p65","p91","p301","p72"],"ubpid":"1880","role":"private","thumbnail":""}}}';glob_start_data_json = glob_start_data_json.replace("\n", "");var glob_start_data = JSON.parse(glob_start_data_json);
+  </script>
+
+</head><body class="">
+	<!-- ================Offcanvus Menu Area =================-->
+	<div id="scroll-container">
+		<div class="wrap-container" id="wrap-scroll">
+	<div class="side_menu">
+			<ul class="ul-scroll list menu_right">
+				<li>
+					<a href="index.html" style="
+    /* font-family: -webkit-pictograph; */
+">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="projects.html">Projects</a>
+				</li>
+				<li>
+					<a href="service.html">Service</a>
+				</li>
+				<li>
+					<a href="#">Pages</a>
+					<ul class="list">
+						<li>
+							<a href="elements.html">Elements</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+					<ul class="list">
+						<li>
+							<a href="blog.html">Blog</a>
+						</li>
+						<li>
+							<a href="single-blog.html">Blog Details</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+	</div>
+</div></div>
+	<!--================End Offcanvus Menu Area =================-->
+
+	<!--================Canvus Menu Area =================-->
+	<div class="canvus_menu">
+		<div class="container">
+			<div class="float-right" style="
+    z-index: 1000;
+">
+				<div class="toggle_icon" title="Menu Bar">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Canvus Menu Area =================-->
+  <header><div class="hero" style="
+    display: none;
+">
+    <svg viewBox="0 0 800 600">
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="35%" class="text--line">
+      Puffy
+    </text>
+    <text text-anchor="middle" x="50%" y="68%" class="text--line2">
+      Delivery
+    </text>
+    
+  </symbol>
+  
+  <g class="g-ants">
+    <use xlink:href="#s-text" class="text-copy"></use>     
+    <use xlink:href="#s-text" class="text-copy"></use>     
+    <use xlink:href="#s-text" class="text-copy"></use>     
+    <use xlink:href="#s-text" class="text-copy"></use>     
+    <use xlink:href="#s-text" class="text-copy"></use>     
+  </g>
+  
+  
+</svg>
+</div>
+    
+    <div class="hero">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="" style="
+    display: none;
+                                      "><div class="intro" style="
+    position: absolute;
+    background-color: #000000;
+    height: 200px;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 997;
+    width: 400px;
+"></div>
+      </a>
+      
+      <div class="owl-carousel owl-theme heroCarousel owl-loaded owl-drag">
+        
+        
+        
+      <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2128px, 0px, 0px); transition: all 0s ease 0s; width: 3724px;"><div class="owl-item cloned" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-1.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1><span style="
+    color: #28a745;
+    text-decoration-style: dotted;
+    text-combine-upright: black;
+    text-decoration: double;
+">Growing</span> this city, on the streets rubbing elbows rep'in on the daily</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item cloned" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-3.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1>Dream Heaven City</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>							
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-2.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1>Got the city on Lock Down :-)</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>							
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item active" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-1.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1><span style="
+    color: #28a745;
+    text-decoration-style: dotted;
+    text-combine-upright: black;
+    text-decoration: double;
+">Growing</span> this city, on the streets rubbing elbows rep'in on the daily</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-3.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1>Dream Heaven City</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>							
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item cloned" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-2.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1>Got the city on Lock Down :-)</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>							
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div><div class="owl-item cloned" style="width: 522px; margin-right: 10px;"><div class="item">
+          <div class="hero__slide">
+            <img src="img/hero-1.png" alt="">
+            <div class="hero__slideContent text-center">
+              <h1><span style="
+    color: #28a745;
+    text-decoration-style: dotted;
+    text-combine-upright: black;
+    text-decoration: double;
+">Growing</span> this city, on the streets rubbing elbows rep'in on the daily</h1>
+              <p>If you are looking at blank cassettes on the web Lorem ipsum dolor sit amet, consectetur adipisicing  eiusmod tempor incididunt.</p>
+							<a class="btn btn--leftBorder btn--rightBorder" href="#/">Details</a>
+							<span class="hero__slideContent--right"></span>
+            </div>
+          </div>
+        </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span style="
+    height: 37px;
+    width: min-width:60px;
+    min-width: 36px;
+"></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
+    </div>
+  </header>
+
+	<section class="about section-margin mb-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-5">
+					<div class="about__img text-center text-md-left mb-5 mb-md-0">
+						<img class="img-fluid" src="img/about.png" alt="">
+						<a href="#/" class="about__img__date text-center" style="
+    max-height: 151px;
+">
+							<h3 style="
+    color: #ffc107;
+">26</h3>
+							<p></p><h4 class="section-intro__title" style="
+    color: #f78da7 !important;
+    font-size: 19px;
+    ">Puff Dat!<br><span style="
+    font-size: 10pt;
+    color: #28a745;
+">Victories</span></h4><br><p></p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-7 pl-xl-5">
+					<div class="section-intro">
+						
+						<h2 class="section-intro__subtitle">Puffy community withstands blows by the establishment<span>...</span>
+<br>
+    <span style="color: #F78DA7 !important;">Puff Dat!</span><br></h2>
+					</div>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+					<a class="btn btn--rightBorder mt-4" href="#/" style="
+    /* width: 500px; */
+">Read More</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+
+	<section class="overview">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-crown"></i></span>
+						<div class="media-body">
+							<h3>286+</h3>
+							<p>Projects done</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-face-smile"></i></span>
+						<div class="media-body">
+							<h3>942+</h3>
+							<p>Happy Clients</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-user"></i></span>
+						<div class="media-body">
+							<h3>263+</h3>
+							<p>Real professionals</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-gift"></i></span>
+						<div class="media-body">
+							<h3>2000+</h3>
+							<p>Cups of Coffee</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  
+
+	<section class="portfolio section-margin">
+		<div class="container">
+			<div class="section-intro">
+				<h4 class="section-intro__title">OUR PORTFOLIO</h4>
+				<h2 class="section-intro__subtitle bottom-border">Latest Completed Projects</h2>
+			</div>
+
+			<div class="row align-items-end pb-md-5 mb-4">
+				<div class="col-md-7 mb-4 mb-md-0">
+					<div class="portfolio__img">
+						<img class="img-fluid" src="img/portfolio1.png" alt="">
+					</div>
+				</div>
+				<div class="col-md-5 mb-5 pl-xl-5">
+					<h4 class="section-intro__title left-border">April 20, 2018</h4>
+					<h2 class="section-intro__subtitle small">Puffy Go'in hard! Re-decorating!</h2>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+					<a class="btn btn--rightBorder mt-3" href="#/">Lemme hit dat</a>
+				</div>
+			</div>
+
+			<div class="row align-items-end pb-md-5 mb-4">
+				<div class="col-md-5 mb-5 pr-xl-5 order-2 order-md-1">
+					<h4 class="section-intro__title left-border">December, 2018</h4>
+					<h2 class="section-intro__subtitle small" style="
+    color: white;
+                                                 ">Typical 9 to 5 right? Naw... <span style="color: #F78DA7 !important;"> Puff Dat! </span><span style="
+    color: #4a555f!important;
+    ">Delivering your 7am Break<span style="
+    color: #ffffff !important;
+">'fix</span> and provideth yo 10pm din<span style="
+    color: #ffffff !important;
+">'herb!</span></span></h2>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+					<a class="btn btn--rightBorder mt-3" href="#/">Hey, Pass that back!</a>
+				</div>
+				<div class="col-md-7 mb-4 mb-md-0 order-1 order-md-2">
+					<div class="portfolio__img">
+						<img class="img-fluid" src="img/portfolio2.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="row align-items-end pb-md-5 mb-4">
+				<div class="col-md-7 mb-4 mb-md-0">
+					<div class="portfolio__img">
+						<img class="img-fluid" src="img/portfolio3.png" alt="">
+					</div>
+				</div>
+
+				<div class="col-md-5 mb-5 pl-xl-5">
+					<h4 class="section-intro__title left-border">December, 2018</h4>
+					<h2 class="section-intro__subtitle small">Pure Bedroom Architecture</h2>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+					<a class="btn btn--rightBorder mt-3" href="#/">Read More</a>
+				</div>
+			</div>
+
+			<div class="row align-items-end pb-md-5 mb-4">
+				<div class="col-md-5 mb-5 pr-xl-5 order-2 order-md-1">
+					<h4 class="section-intro__title left-border">December, 2018</h4>
+					<h2 class="section-intro__subtitle small">Pure Bedroom Architecture</h2>
+					<p>If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+					<a class="btn btn--rightBorder mt-3" href="#/">Read More</a>
+				</div>
+
+				<div class="col-md-7 order-1 order-md-2 mb-4 mb-md-0">
+					<div class="portfolio__img">
+						<img class="img-fluid" src="img/portfolio4.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center pt-2">
+				<button class="btn btn--rightBorder btn--leftBorder">Load More Projects</button>
+			</div>
+		</div>
+	</section>
+	
+
+	<section class="tips tips-bg">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7 mb-4 mb-lg-0">
+					<h2 class="section-intro__subtitle">Delivery Time Estimates... <br>
+    Puff Dat, Track that pack <span style="
+    /* font-size: 60pt; */
+    /* font-family: cursive; */
+    color: #ca5e78;
+"><br><span style="
+    background: #262533;
+    padding: 0px 6px 4px 15px;
+    border-radius: 5px;
+    border-bottom-right-radius: 24;
+">From $hop</span><span style="
+    font-size: 20pt;
+    font-weight: 600;
+    color: #ab506663 !important;
+    background-color: #ffffff2e;
+    border-radius: 20px;
+    padding: 3pt;
+    margin-left: 20px;
+">  To </span><span style="
+    color: #693e3e;
+    font-weight: 900;
+             ">Drop</span><span style="
+    font-size: 20pt;
+    font-weight: 600;
+    color: #ab5066 !important;
+             "></span><br> <span style="
+    font-size: 20pt;
+    font-weight: 600;
+    color: #ab506663 !important;
+    background-color: #ffffff2e;
+    border-radius: 20px;
+    padding: 3pt;
+">  Puff</span><span style="
+    font-size: 14pt;
+    font-weight: 600;
+    opacity: .5;
+"> by </span> <span style="
+    font-size: 20pt;
+    font-weight: 600;
+    color: #ab506663 !important;
+    background-color: #ffffff2e;
+    border-radius: 20px;
+    padding: 3pt;
+">  Puff</span> <span style="
+    font-size: 20pt;
+    font-weight: 600;
+    opacity: .2;
+    "> until . . . </span> <span style="
+    font-size: 55pt;
+    float: right;
+"> Got'em! </span></span></h2>
+					
+				</div>
+				<div class="col-lg-5 text-center text-lg-right">
+					<a class="btn btn-dark btn--leftBorder btn--rightBorder" href="#/">Show me the Puff's</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="testimonial section-margin">
+		<div class="container">
+			<div class="section-intro">
+				<h4 class="section-intro__title">OUR Testimonial</h4>
+				<h2 class="section-intro__subtitle bottom-border">What Would Weed Jesus Say</h2>
+    <div id="kettle">
+<div id="smoke">
+  <span class="s0"></span>
+  <span class="s1"></span>
+  <span class="s2"></span>
+  <span class="s3"></span>
+  <span class="s4"></span>
+  <span class="s5"></span>
+  <span class="s6"></span>
+  <span class="s7"></span>
+  <span class="s8"></span>
+  <span class="s9"></span>
+</div>
+  1 Puff 2 Puff 3 Puff 4 Puff 5 my package arrived!
+</div>
+			</div>
+
+			<div class="owl-carousel owl-theme testimonialCarousel owl-loaded owl-drag">
+				
+				
+        
+        
+        
+			<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1716px, 0px, 0px); transition: all 0.25s ease 0s; width: 6292px;"><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+				</div></div><div class="owl-item active" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+				</div></div><div class="owl-item" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+				</div></div><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+				</div></div><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div><div class="owl-item cloned" style="width: 492px; margin-right: 80px;"><div class="item">
+					<div class="media testimonial__slide">
+						<img class="img-fluid mr-4" src="img/testimonial.png" width="120" height="125" alt="">
+						<div class="media-body">
+							<blockquote>
+								“If you are looking at blank cassettes on the web lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt amet.”
+							</blockquote>
+							<h3>Falcon Astle</h3>
+							<p>Google Android</p>
+						</div>
+					</div>
+        </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
+		</div>
+	</section>
+
+	<footer class="footer footer-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-lg-2 mb-4 mb-lg-0 text-left">
+					<h3 class="footer__title">Top Products</h3>
+					<ul class="footer__link">
+						<li><a href="#/">managed Website</a></li>
+						<li><a href="#/">Manage Reputation</a></li>
+						<li><a href="#/">power Tools</a></li>
+						<li><a href="#/">Marketing Service</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-lg-2 mb-4 mb-lg-0 text-left">
+					<h3 class="footer__title">Quick Links</h3>
+					<ul class="footer__link">
+						<li><a href="#/">Jobs</a></li>
+						<li><a href="#/">Brand Assets</a></li>
+						<li><a href="#/">Investor Relations</a></li>
+						<li><a href="#/">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-lg-2 mb-4 mb-lg-0 text-left">
+					<h3 class="footer__title">Features</h3>
+					<ul class="footer__link">
+						<li><a href="#/">Jobs</a></li>
+						<li><a href="#/">Brand Assets</a></li>
+						<li><a href="#/">Investor Relations</a></li>
+						<li><a href="#/">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-lg-2 mb-4 mb-lg-0 text-left">
+					<h3 class="footer__title">Resources</h3>
+					<ul class="footer__link">
+						<li><a href="#/">Guides</a></li>
+						<li><a href="#/">Research</a></li>
+						<li><a href="#/">Experts</a></li>
+						<li><a href="#/">Agencies</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-8 col-lg-4 mb-4 mb-lg-0 text-left">
+					<h3 class="footer__title">Newsletter</h3>
+					<p>You can trust us. we only send promo offers,</p>
+					<form action="" class="form-subscribe">
+						<div class="input-group">
+							<input type="email" class="form-control" placeholder="Your email address" required="">
+							<div class="input-group-append">
+								<button class="btn-append" type="submit"><i class="lnr lnr-arrow-right"></i></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="d-sm-flex justify-content-between footer__bottom top-border">
+				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ©<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript">document.write(new Date().getFullYear());</script>2019 All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				<ul class="social-icons mt-2 mt-sm-0">
+					<li><a href="#/"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#/"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#/"><i class="fab fa-dribbble"></i></a></li>
+					<li><a href="#/"><i class="fab fa-behance"></i></a></li>					
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>	
+	<script src="vendor/bootstrap/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<script src="vendor/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		var testimonialCarousel = $('.testimonialCarousel');
+      testimonialCarousel.owlCarousel({
+      loop:true,
+      margin:80,
+      startPosition: 2,
+      nav: false,
+      responsiveClass:true,
+      responsive:{
+        0:{
+            items:1
+        },
+        1000:{
+            items:2,
+            loop:true
+        }
+      }
+    });
+
+    var heroCarousel = $('.heroCarousel');
+      heroCarousel.owlCarousel({
+      loop:true,
+      margin:10,
+      nav: false,
+      startPosition: 1,
+      responsiveClass:true,
+      responsive:{
+        0:{
+            items:1
+        }
+      }
+	});
+
+	var dropToggle = $('.menu_right > li').has('ul').children('a');
+	dropToggle.on('click', function() {
+		dropToggle.not(this).closest('li').find('ul').slideUp(200);
+		$(this).closest('li').children('ul').slideToggle(200);
+		return false;
+	});
+
+	$( ".toggle_icon" ).on('click', function() {
+		$( 'body' ).toggleClass( "open" );
+	});
+
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+
+</body></html>
