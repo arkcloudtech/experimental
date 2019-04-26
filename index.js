@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
+const sha256 = require('sha256');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -32,25 +33,39 @@ function logger(req, res, next) {
 async function dynamicRouter(req, res, next) {
     console.log('puffy-router:' + req.ip + ' For: ' + req.path);
     let dRouter = 'd-route';
-    if(req.path.indexOf(dRouter) === -1){
-        // n
+    if(req.path.indexOf(dRouter) > -1){
+        // already route corrected >> 
+        let partRoute = req.path.fullRoute.split(dRouter + "=");;
+        // decode url param held in d-route
+        
+        let decodedRoute =  decodeURIComponent(partRoute);
+        // go grab resource manually >>
+        try {
+          let resp = await mirrorResp(decodedRoute);
+          let reSnapName = sha256(decodedRoute);
+          let reSnapPath = path.join(__dirname, 'reSnaps/');
+        // << save it to disk after hashing it
+          let fs = require('fs');
+          fs.writeFileSync(`${reSnapPath}/${reSnapName}.rsnap`, resp.body , { mode: 0o755 });
+        } catch(ex) {
+          console.log(ex);
+        }
     } else {
+      let doc = await dynamicPuffy(req, res);
 
+      // prepare $elector
+      var $ = require('cheerio').load(doc);
+  
+      // intercept all links (anything with src or href attributes)
+      var sources = $('[src]').each((i, ele)=>{
+          ele.attribs["src"] = `http://localhost:${port}?${dRouter}=${encodeURIComponent(ele.attribs["src"])}`;
+      });
+      var hrefs = $('[href]').each((i, ele)=>{
+          ele.attribs["href"] = `http://localhost:${port}?${dRouter}=${encodeURIComponent(ele.attribs["href"])}`;
+      });
+  
+      res.send($.html);
     }
-    let doc = await dynamicPuffy(req, res);
-
-    // prepare $elector
-    var $ = require('cheerio').load(doc);
-
-    // intercept all links (anything with src or href attributes)
-    var sources = $('[src]').each((i, ele)=>{
-        ele.attribs["src"] = `http://localhost:${port}?${dRouter}=${encodeURIComponent(ele.attribs["src"])}`;
-    });
-    var hrefs = $('[href]').each((i, ele)=>{
-        ele.attribs["href"] = `http://localhost:${port}?${dRouter}=${encodeURIComponent(ele.attribs["href"])}`;
-    });
-
-    res.send($.html);
 }
 
 //Configure the settings of the app
@@ -85,6 +100,18 @@ async function doRequest(url) {
     request(url, function (error, res, body) {
       if (!error && res.statusCode == 200) {
         resolve(body);
+      } else {
+        reject(error);
+      }
+    });
+  });
+};
+
+async function mirrorResp(url) {
+  return new Promise(function (resolve, reject) {
+    request(url, function (error, res, body) {
+      if (!error && res.statusCode == 200) {
+        resolve({ body: body, resp: res });
       } else {
         reject(error);
       }
