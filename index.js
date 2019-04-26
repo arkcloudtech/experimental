@@ -31,26 +31,41 @@ function logger(req, res, next) {
 }
 
 async function dynamicRouter(req, res, next) {
-    console.log('puffy-router:' + req.ip + ' For: ' + req.path);
+    console.log('puffy-router:' + req.ip + ' For: ' + req.originalUrl);
     let dRouter = 'd-route';
-    if(req.path.indexOf(dRouter) > -1){
+    if(req.originalUrl.indexOf(dRouter) > -1){
         // already route corrected >> 
-        let partRoute = req.path.fullRoute.split(dRouter + "=");;
+        let partRoute = req.originalUrl.split(dRouter + "=")[1];
+
         // decode url param held in d-route
-        
         let decodedRoute =  decodeURIComponent(partRoute);
         // go grab resource manually >>
         try {
           let resp = await mirrorResp(decodedRoute);
           let reSnapName = sha256(decodedRoute);
           let reSnapPath = path.join(__dirname, 'reSnaps/');
-        // << save it to disk after hashing it
+          let rsp = `${reSnapPath}/${reSnapName}.rsnap`;
+
+          // check if represented already
           let fs = require('fs');
-          fs.writeFileSync(`${reSnapPath}/${reSnapName}.rsnap`, resp.body , { mode: 0o755 });
+          let rpz = fs.existsSync(rsp);
+          let fData = "";
+          if(!rpz){
+            // << save it to disk after hashing it
+            fs.writeFileSync(rsp, resp.body , { mode: 0o755 });
+            fData = resp.body;
+          } else {
+            fData = fs.readFileSync(rsp);
+          }
+
+          // now return fData (but in what format???)
+          res.send(fData);
+
         } catch(ex) {
           console.log(ex);
         }
     } else {
+      // if doc is an html like document then process it
       let doc = await dynamicPuffy(req, res);
 
       // prepare $elector
@@ -64,7 +79,7 @@ async function dynamicRouter(req, res, next) {
           ele.attribs["href"] = `http://localhost:${port}?${dRouter}=${encodeURIComponent(ele.attribs["href"])}`;
       });
   
-      res.send($.html);
+      res.send($.html());
     }
 }
 
